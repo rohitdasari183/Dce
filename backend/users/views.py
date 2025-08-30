@@ -24,8 +24,8 @@ from urllib.parse import urlencode
 # GitHub OAuth config
 GITHUB_CLIENT_ID = settings.GITHUB_CLIENT_ID
 GITHUB_CLIENT_SECRET = settings.GITHUB_CLIENT_SECRET
-FRONTEND_URL = "http://localhost:3000/signup"
-BACKEND_BASE_URL = "http://127.0.0.1:8000"
+FRONTEND_URL = "https://dce-kappa.vercel.app/signup"
+BACKEND_BASE_URL = "https://dce.onrender.com"
 GITHUB_REDIRECT_URI = f"{BACKEND_BASE_URL}/api/users/github/callback/"
 
 
