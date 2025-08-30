@@ -2,7 +2,7 @@ import axios from "axios";
 
 // Create a custom axios instance pointing to your Django backend
 const instance = axios.create({
-    baseURL: "http://localhost:8000", // Django backend base URL
+    baseURL: "https://dce.onrender.com", // Django backend base URL
 });
 
 // Intercept every request before it is sent
