@@ -23,15 +23,31 @@ GITHUB_CLIENT_ID=config("GITHUB_CLIENT_ID")
 GITHUB_CLIENT_SECRET=config("GITHUB_CLIENT_SECRET")
 
 # DEBUG mode for development — set to False in production!
-DEBUG = True
+DEBUG = False
 
 # Allow all domains during dev; restrict in production
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = [
+    "dce.onrender.com",   # your Render backend
+    "localhost",
+    "127.0.0.1",
+]
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",              # local dev
     "https://dce-kappa.vercel.app",       # your Vercel frontend
 ]
-
+CORS_ALLOWED_ORIGIN_REGEXES = [
+    r"^https://.*\.vercel\.app$",
+]
+CORS_ALLOW_CREDENTIALS = True
+CORS_ALLOW_ALL_HEADERS = True
+CORS_ALLOW_METHODS = [
+    "DELETE",
+    "GET",
+    "OPTIONS",
+    "PATCH",
+    "POST",
+    "PUT",
+]
 
 
 INSTALLED_APPS = [
@@ -107,20 +123,7 @@ DATABASES = {
         'PORT': config("DB_PORT"),
     }
 }
-CORS_ALLOWED_ORIGINS=[
-    'http://localhost:3000',
 
-]
-CORS_ALLOW_ALL_HEADERS = True
-CORS_ALLOW_METHODS = [
-    "DELETE",
-    "GET",
-    "OPTIONS",
-    "PATCH",
-    "POST",
-    "PUT",
-]
-CORS_ALLOW_CREDENTIALS = True
 
 
 
