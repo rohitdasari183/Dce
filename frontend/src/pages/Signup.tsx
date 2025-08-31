@@ -127,7 +127,7 @@ const Signup: React.FC = () => {
 
                     {/* NOTE for users */}
                     <p className="text-center text-sm text-amber-400 mb-4">
-                        🔔 First verify your GitHub account which is provided below before filling the form.
+                        🔔 First verify your GitHub account before filling out the rest of the form.
                     </p>
 
                     {/* Signup Form */}
