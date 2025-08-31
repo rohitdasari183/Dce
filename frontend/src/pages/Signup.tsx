@@ -62,7 +62,7 @@ const Signup: React.FC = () => {
 
     // Redirect user to backend GitHub OAuth endpoint
     const handleGithubVerify = () => {
-        window.location.href = "http://localhost:8000/api/users/github/login/";
+        window.location.href = "https://dce.onrender.com/api/users/github/login/";
     };
 
     // Handle signup form submission
