@@ -62,7 +62,7 @@ const Signup: React.FC = () => {
 
     // Redirect user to backend GitHub OAuth endpoint
     const handleGithubVerify = () => {
-        window.location.href = "https://dce.onrender.com/api/users/github/login/";
+        window.location.href = "http://localhost:8000/api/users/github/login/";
     };
 
     // Handle signup form submission
@@ -109,6 +109,7 @@ const Signup: React.FC = () => {
             {/* Decorative background orbs */}
             <div className="absolute top-10 left-10 w-72 h-72 bg-teal-600 rounded-full mix-blend-multiply filter blur-3xl opacity-25 animate-pulse"></div>
             <div className="absolute bottom-10 right-10 w-72 h-72 bg-amber-500 rounded-full mix-blend-multiply filter blur-3xl opacity-25 animate-pulse delay-1000"></div>
+            
             {/* Signup container */}
             <div className="relative z-10 flex flex-col md:flex-row w-full max-w-5xl bg-gray-900/80 backdrop-blur-2xl border border-gray-800 rounded-3xl shadow-2xl overflow-hidden">
                 {/* Left Side (branding / illustration) */}
@@ -123,6 +124,11 @@ const Signup: React.FC = () => {
                     <h2 className="text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-teal-400 via-blue-400 to-amber-400 text-center mb-8">
                         Create Your Account
                     </h2>
+
+                    {/* NOTE for users */}
+                    <p className="text-center text-sm text-amber-400 mb-4">
+                        🔔 First verify your GitHub account which is provided below before filling the form.
+                    </p>
 
                     {/* Signup Form */}
                     <form onSubmit={handleSubmit} className="space-y-6" encType="multipart/form-data">
@@ -211,6 +217,13 @@ const Signup: React.FC = () => {
                                 className="hidden"
                             />
                         </label>
+
+                        {/* Show file name if uploaded */}
+                        {form.profile_image && (
+                            <p className="text-sm text-center text-gray-300 mt-2">
+                                Selected file: <span className="font-medium text-amber-400">{form.profile_image.name}</span>
+                            </p>
+                        )}
 
                         {/* Submit */}
                         <button
