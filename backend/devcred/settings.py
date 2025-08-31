@@ -27,7 +27,10 @@ DEBUG = True
 
 # Allow all domains during dev; restrict in production
 ALLOWED_HOSTS = ["*"]
-
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000",              # local dev
+    "https://dce-kappa.vercel.app",       # your Vercel frontend
+]
 
 
 
